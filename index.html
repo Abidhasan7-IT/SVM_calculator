@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SVM Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>SVM Calculator</h1>
+<p class="sub">Enter w, b and your data points, then click Solve SVM. Leave w and b blank to have the optimal SVM found for you.</p>
+
+<div class="card">
+<h2>Hyperplane</h2>
+<div class="row">
+<div class="row" id="wbox"></div>
+<label>b<input id="b" placeholder="–"></label>
+<label>C (penalty)<input id="C" placeholder="–"></label>
+<button id="flip" title="Replace w, b with -w, -b">Flip sign (−w, −b)</button>
+<button id="solve" class="p">Solve SVM</button>
+</div>
+<div id="msg"></div>
+</div>
+
+<div class="card">
+<h2>Data points</h2>
+<div class="tw"><table id="tbl"></table></div>
+<div class="row" style="margin-top:10px"><button id="addr">+ Add row</button><button id="addc">+ Add feature column</button></div>
+</div>
+
+<div class="two" id="out">
+<div class="card"><h2>Result</h2><div id="verdict"></div><div class="g" id="kpi"></div><p class="eq" id="eq"></p></div>
+<div class="card" id="plotcard"><h2>Plot (x₁ vs x₂)</h2><svg id="plot" viewBox="0 0 420 330" role="img" aria-label="Scatter plot with decision boundary and margins"></svg><p class="sub" style="font-size:12px;margin:6px 0 0">● class +1 · ■ class −1 · solid line = boundary · dashed = margins · red ring = wrong sign · green ring = support vector</p></div>
+</div>
+</main>
+
+
+<script src="script.js"></script>
+
+<footer style="text-align:center;padding:14px 0 20px;background:var(--card);border-top:1px solid var(--bd);margin-top:40px">
+  <img src="https://avatars.githubusercontent.com/u/91649692?v=4" alt="SVM logo" style="height:40px;vertical-align:middle ;margin-right:10px;border-radius:50%">
+  <span style="font-size:12px;color:var(--mut);margin-left:10px;color: #4fd1a0;">Abid Hasan &copy; 2026</span>
+</footer>
+</body>
+</html>
